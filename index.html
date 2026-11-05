@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Assignment Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="topbar">
+        <div class="topbar-inner">
+            <div class="brand">
+                <span class="brand-icon">✓</span>
+                <span>TaskFlow</span>
+            </div>
+            <span class="topbar-label">Student Workspace</span>
+        </div>
+    </header>
+
+    <main class="dashboard">
+
+        <section class="welcome">
+            <span class="eyebrow">YOUR WORKSPACE</span>
+            <h1>Student Assignment Tracker</h1>
+            <p>Stay organized. Track deadlines. Get things done.</p>
+        </section>
+
+        <section class="panel add-panel">
+            <div class="section-heading">
+                <div>
+                    <h2>Add New Assignment</h2>
+                    <p>Enter your assignment details below.</p>
+                </div>
+            </div>
+
+            <div class="assignment-form">
+                <div class="form-field">
+                    <label for="assignment">Assignment Name</label>
+                    <input
+                        type="text"
+                        id="assignment"
+                        placeholder="e.g. Complete Python Homework"
+                    >
+                </div>
+
+                <div class="form-field">
+                    <label for="dueDate">Due Date</label>
+                    <input type="date" id="dueDate">
+                </div>
+                <div class="form-field">
+                    <label for="assignmentDescription">Description</label>
+                    <textarea
+                        id="assignmentDescription"
+                        placeholder="Enter assignment details"
+                    ></textarea>
+                </div>
+
+                <button type="button" id="addAssignment">
+                    + Add Assignment
+                </button>
+            </div>
+        </section>
+
+        <section class="panel assignments-panel">
+            <div class="section-heading">
+                <div>
+                    <h2>My Assignments</h2>
+                    <p>Keep track of your upcoming work.</p>
+                </div>
+                <span class="section-tag">Upcoming</span>
+            </div>
+
+            <div class="assignment-list">
+
+                <div class="assignment-card">
+                    <input type="checkbox" id="task1">
+                    <div class="assignment-details">
+                        <label for="task1">Complete Python Homework</label>
+                        <span class="due-date">Due: October 28, 2026</span>
+                    </div>
+                </div>
+
+                <div class="assignment-card">
+                    <input type="checkbox" id="task2">
+                    <div class="assignment-details">
+                        <label for="task2">Study for Midterm</label>
+                        <span class="due-date">Due: October 30, 2026</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="panel completed-panel">
+            <div class="section-heading">
+                <div>
+                    <h2>Completed Assignments</h2>
+                    <p>Your finished assignments will appear here.</p>
+                </div>
+                <span class="completed-icon">✓</span>
+            </div>
+
+            <div class="completed-list" aria-label="Completed assignments"></div>
+
+            <div class="empty-state">
+                <span class="empty-icon">✓</span>
+                <p>No completed assignments yet.</p>
+            </div>
+        </section>
+
+        <footer>
+            Student Assignment Tracker
+        </footer>
+
+    </main>
+<script src="script.js"></script>
+</body>
+</html>
