@@ -146,7 +146,8 @@ body {
     font-weight: 650;
 }
 
-.form-field input {
+.form-field input,
+.form-field textarea {
     width: 100%;
     height: 46px;
     padding: 0 14px;
@@ -158,7 +159,15 @@ body {
     font-family: inherit;
 }
 
-.form-field input:focus {
+.form-field textarea {
+    padding: 12px 14px;
+    resize: none;
+    overflow-y: auto;
+    min-height: 46px;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
     outline: 2px solid #bfdbfe;
     border-color: var(--blue);
 }
@@ -346,5 +355,123 @@ footer {
 
 /* Respect the empty-state visibility set by JavaScript. */
 .empty-state[hidden] {
+    display: none;
+}
+
+/* DUE DATE STATUS */
+
+.deadline-status {
+    display: inline-block;
+    width: fit-content;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.assignment-card.overdue {
+    border-left: 4px solid #dc2626;
+}
+
+.overdue .deadline-status {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+.assignment-card.due-soon {
+    border-left: 4px solid #f59e0b;
+}
+
+.due-soon .deadline-status {
+    background: #fef3c7;
+    color: #92400e;
+}
+.assignment-card.on-track {
+    border-left: 4px solid #16a34a;
+}
+
+.on-track .deadline-status {
+    background: #dcfce7;
+    color: #166534;
+}
+
+/* Edit and Delete Buttons */
+.assignment-actions {
+    display: flex;
+    gap: 8px;
+    margin-left: auto;
+}
+
+.assignment-actions button {
+    padding: 8px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.assignment-actions button:first-child {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+.assignment-actions button:last-child {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+@media (max-width: 700px) {
+    .assignment-card {
+        flex-wrap: wrap;
+    }
+}
+/* Inline Assignment Editing */
+
+.inline-editor {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+    min-width: 0;
+}
+
+.inline-editor input,
+.inline-editor textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font: inherit;
+}
+
+.inline-editor textarea {
+    resize: vertical;
+    min-height: 65px;
+}
+
+.edit-controls {
+    display: flex;
+    gap: 8px;
+}
+
+.edit-controls button {
+    padding: 8px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.edit-controls button:first-child {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+.edit-controls button:last-child {
+    background: #f1f5f9;
+    color: #475569;
+}
+
+/* Hide the original card content and buttons while editing */
+.assignment-details[hidden],
+.assignment-actions[hidden] {
     display: none;
 }
