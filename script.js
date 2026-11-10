@@ -2,6 +2,7 @@
 const nameInput = document.getElementById("assignment");
 const descriptionInput = document.getElementById("assignmentDescription");
 const dateInput = document.getElementById("dueDate");
+const subjectInput = document.getElementById("assignmentSubject");
 const addButton = document.getElementById("addAssignment");
 const assignmentList = document.querySelector(".assignment-list");
 const completedList = document.querySelector(".completed-list");
@@ -41,8 +42,12 @@ addButton.addEventListener("click", function () {
     const name = nameInput.value.trim();
     const description = descriptionInput.value.trim();
     const date = dateInput.value;
+    
+const subject = subjectInput.value;
 
-    if (name === "" || description === "" || date === "") {
+
+    if (name === "" || description === "" || date === "" || subject === "") {
+
         alert("Please fill in all fields.");
         return;
     }
@@ -68,14 +73,22 @@ addButton.addEventListener("click", function () {
 
     const descriptionParagraph = document.createElement("p");
     descriptionParagraph.textContent = description;
+    
+const subjectLabel = document.createElement("span");
+subjectLabel.className = "assignment-subject";
+subjectLabel.textContent = `Subject: ${subject}`;
 
-    details.append(title, due, descriptionParagraph);
+
+    
+details.append(title, due, subjectLabel, descriptionParagraph);
     card.append(checkbox, details);
     assignmentList.appendChild(card);
 
     nameInput.value = "";
     descriptionInput.value = "";
     dateInput.value = "";
+    subjectInput.value = "";
+
 
     alert("Assignment added successfully!");
 });
