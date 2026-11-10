@@ -3,6 +3,7 @@ const nameInput = document.getElementById("assignment");
 const descriptionInput = document.getElementById("assignmentDescription");
 const dateInput = document.getElementById("dueDate");
 const subjectInput = document.getElementById("assignmentSubject");
+const priorityInput = document.getElementById("assignmentPriority");
 const addButton = document.getElementById("addAssignment");
 const assignmentList = document.querySelector(".assignment-list");
 const completedList = document.querySelector(".completed-list");
@@ -44,6 +45,7 @@ addButton.addEventListener("click", function () {
     const date = dateInput.value;
     
 const subject = subjectInput.value;
+const priority = priorityInput.value;
 
 
     if (name === "" || description === "" || date === "" || subject === "") {
@@ -77,10 +79,13 @@ const subject = subjectInput.value;
 const subjectLabel = document.createElement("span");
 subjectLabel.className = "assignment-subject";
 subjectLabel.textContent = `Subject: ${subject}`;
+const priorityLabel = document.createElement("span");
+priorityLabel.className = "assignment-priority";
+priorityLabel.textContent = `Priority: ${priority}`;
 
 
     
-details.append(title, due, subjectLabel, descriptionParagraph);
+details.append(title, due, subjectLabel, descriptionParagraph, priorityLabel);
     card.append(checkbox, details);
     assignmentList.appendChild(card);
 
@@ -88,6 +93,7 @@ details.append(title, due, subjectLabel, descriptionParagraph);
     descriptionInput.value = "";
     dateInput.value = "";
     subjectInput.value = "";
+    priorityInput.value = "Low";
 
 
     alert("Assignment added successfully!");
