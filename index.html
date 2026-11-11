@@ -49,6 +49,19 @@
                     <label for="dueDate">Due Date</label>
                     <input type="date" id="dueDate">
                 </div>
+                
+<div class="form-field">
+    <label for="assignmentSubject">Subject</label>
+    <select id="assignmentSubject">
+        <option value="">Select a subject</option>
+        <option value="Math">Math</option>
+        <option value="English">English</option>
+        <option value="Science">Science</option>
+        <option value="History">History</option>
+        <option value="Computer Science">Computer Science</option>
+        <option value="Other">Other</option>
+    </select>
+</div>
                 <div class="form-field">
                     <label for="assignmentDescription">Description</label>
                     <textarea
@@ -56,6 +69,15 @@
                         placeholder="Enter assignment details"
                     ></textarea>
                 </div>
+
+
+<div class="form-field">
+    <label for="assignmentPriority">Priority</label>
+    <select id="assignmentPriority">
+        <option value="Low">Low Priority</option>
+        <option value="High">High Priority</option>
+    </select>
+</div>
 
                 <button type="button" id="addAssignment">
                     + Add Assignment

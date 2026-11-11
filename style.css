@@ -358,6 +358,7 @@ footer {
     display: none;
 }
 
+
 /* DUE DATE STATUS */
 
 .deadline-status {
@@ -475,3 +476,21 @@ footer {
 .assignment-actions[hidden] {
     display: none;
 }
+
+/* Assignment priority */
+.form-field select {
+    width: 100%;
+    height: 46px;
+    padding: 0 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 9px;
+    background: white;
+    font-size: 14px;
+}
+
+.assignment-priority {
+    font-size: 13px;
+    font-weight: 600;
+    color: #2563eb;
+}
+
