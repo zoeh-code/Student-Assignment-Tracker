@@ -494,3 +494,71 @@ footer {
     color: #2563eb;
 }
 
+/*mprove assignment progress visibility*/
+/* Progress percentage */
+.design-progress-percentage {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--blue);
+}
+
+/* Background of the progress bar */
+.design-progress-track {
+    width: 100%;
+    height: 12px;
+    background: var(--border);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+/* Blue fill that grows as assignments are completed */
+.design-progress-fill {
+    width: 0%;
+    height: 100%;
+    background: var(--blue);
+    border-radius: inherit;
+    transition: width 0.3s ease;
+}
+
+/* Layout for completed and incomplete counts */
+.design-progress-summary {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 20px;
+}
+
+/* Individual count boxes */
+.design-progress-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 18px;
+    background: #f8fafc;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+}
+
+/* Count labels */
+.design-progress-stat span {
+    font-size: 13px;
+    font-weight: 650;
+    color: var(--muted);
+}
+
+/* Count numbers */
+.design-progress-stat strong {
+    font-size: 25px;
+    color: var(--navy);
+}
+
+/* Keep the progress section readable on phones */
+@media (max-width: 700px) {
+    .design-progress-summary {
+        gap: 10px;
+    }
+
+    .design-progress-stat {
+        padding: 14px;
+    }
+}

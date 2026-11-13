@@ -277,3 +277,78 @@ edit.onclick = function() {
 document.querySelectorAll(".assignment-card").forEach(addEditDelete);
 updateCompletedEmptyState();
 
+// Display assignment completion progress automatically.
+// Updates when assignments are added, completed,
+// unchecked, or deleted
+
+// Calculate assignment progress
+function designUpdateProgress() {
+
+    // Count assignments that are not completed.
+    const incomplete = document.querySelectorAll(
+        ".assignment-list .assignment-card"
+    ).length;
+
+    // Count assignments that are completed.
+    const completed = document.querySelectorAll(
+        ".completed-list .assignment-card"
+    ).length;
+
+    // Calculate the total number of assignments.
+    const total = incomplete + completed;
+
+    // Calculate percentage completed.
+    // Display 0% when there are no assignments.
+    const percentage = total === 0
+        ? 0
+        : Math.round((completed / total) * 100);
+
+    // Update the completed assignment count.
+    document.getElementById(
+        "designCompletedCount"
+    ).textContent = completed;
+
+    // Update the incomplete assignment count.
+    document.getElementById(
+        "designIncompleteCount"
+    ).textContent = incomplete;
+
+    // Display the completion percentage.
+    document.getElementById(
+        "designProgressPercentage"
+    ).textContent = percentage + "%";
+
+    // Adjust the blue progress bar to match percentage.
+    document.getElementById(
+        "designProgressFill"
+    ).style.width = percentage + "%";
+
+    // Update the accessible progress value.
+    document.getElementById(
+        "designProgressTrack"
+    ).setAttribute("aria-valuenow", percentage);
+}
+
+
+// Watch for assignment changes
+// MutationObserver detects when assignment cards
+// are added, removed, or moved between lists.
+// This avoids changing the team's existing functions.
+
+const designProgressObserver = new MutationObserver(function() {
+    designUpdateProgress();
+});
+
+// Watch incomplete assignments.
+designProgressObserver.observe(assignmentList, {
+    childList: true
+});
+
+// Watch completed assignments.
+designProgressObserver.observe(completedList, {
+    childList: true
+});
+
+// Display progress when the page first loads.
+
+designUpdateProgress();

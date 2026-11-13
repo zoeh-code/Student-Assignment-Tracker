@@ -27,6 +27,37 @@
             <p>Stay organized. Track deadlines. Get things done.</p>
         </section>
 
+        <!--Add an assignment progress overview-->
+        <section class="panel design-progress-panel">
+            <div class="section-heading">
+                <div>
+                    <h2>Assignment Progress</h2>
+                    <p>See how much you've completed and what's left.</p>
+                </div>
+                <span class="design-progress-percentage" id="designProgressPercentage">0%</span>
+            </div>
+        
+            <!-- Progress bar -->
+            <div class="design-progress-track" id="designProgressTrack" role="progressbar" aria-label="Assignment completion"
+                aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                <div class="design-progress-fill" id="designProgressFill"></div>
+            </div>
+        
+            <!-- Assignment totals -->
+            <div class="design-progress-summary">
+                <div class="design-progress-stat">
+                    <span>Completed</span>
+                    <strong id="designCompletedCount">0</strong>
+                </div>
+        
+                <div class="design-progress-stat">
+                    <span>Incomplete</span>
+                    <strong id="designIncompleteCount">0</strong>
+                </div>
+            </div>
+        </section>
+
+        
         <section class="panel add-panel">
             <div class="section-heading">
                 <div>
